@@ -1,0 +1,607 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ffff;
+  height: 100vh;
+}
+
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #3eb4f8ff;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+h2.titulo {
+  color: #000;
+  font-size: 38px;
+  text-align: center;
+}
+
+h2.titulo span {
+  color: #3eb4f8ff;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+  box-shadow: 0px 0px 8px #3faf00ff;
+  transform: scale(1.05);
+}
+button:focus,
+form .btn-enviar input:focus {
+  box-shadow: 0px 0px 8px #3eb4f8ff;
+  transform: scale(1.05);
+}
+/* Estilo do cabeçalho */
+.interface .logo img {
+  width: 260px;
+  height: 120px;
+  transition: 2s;
+}
+.interface .logo img:hover {
+  transition: 5s;
+  transform: scale(1.4);
+}
+
+header {
+  padding: 40px 4%;
+}
+
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.4s;
+}
+
+header nav.menu-desktop a:hover {
+  color: #3eb4f8ff;
+  transform: scale(1.2);
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav.menu-desktop ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+.overlay-menu {
+  background-color: #000000c7;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8888;
+  display: none;
+}
+/* estilo topo do site */
+section.topo-do-site {
+  padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.menu-mobile {
+  display: none;
+}
+.topo-do-site h1 {
+  color: #000;
+  font-size: 85px;
+  line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+  color: #3eb4f8ff;
+}
+.topo-do-site .txt-topo-site h1 span.green {
+  color: #3faf00ff;
+}
+.topo-do-site .txt-topo-site h1 span.orange {
+  color: #f6a400ff;
+}
+.topo-do-site .txt-topo-site p {
+  font-size: 20px;
+  color: #000000;
+  margin: 20px 0px;
+}
+.topo-do-site .txt-topo-site p span {
+  font-size: 38px;
+  color: #3eb4f8ff;
+  margin: 40px 20px;
+}
+.topo-do-site .img-topo-site img,
+.sobre .img-sobre img {
+  width: 400px;
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+@keyframes flutuar {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 30px;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+    width: 800px;
+    height: 460px;
+  }
+  25% {
+    transform: scale(1.05);
+    width: 840px;
+    height: 483px;
+  }
+  50% {
+    transform: scale(1.1);
+    width: 880px;
+    height: 506px;
+  }
+  75% {
+    transform: scale(1.05);
+    width: 840px;
+    height: 483px;
+  }
+  100% {
+    transform: scale(1);
+    width: 800px;
+    height: 460px;
+  }
+}
+
+/* ESTILOS DAS ESPECIALIDADES */
+section.especialidades {
+  padding: 40px 4%;
+}
+
+section.especialidades .flex {
+  flex-wrap: wrap;
+  gap: 60px;
+}
+@media screen and (min-width: 1020px) {
+  .especialidades-box {
+    width: 30%; /* Defina o tamanho desejado */
+    padding: 20px; /* Adicione um espaçamento interno */
+    text-align: center; /* Centralize o conteúdo */
+    box-sizing: border-box; /* Inclua o padding no tamanho total */
+    display: inline-block; /* Para que os boxes fiquem lado a lado */
+  }
+}
+
+.especialidades .especialidades-box,
+.sobre .especialidades-box {
+  flex: 1 1 calc(50%-20px);
+  color: #000;
+  padding: 40px;
+  border: 2px solid #ffffff3b;
+  margin-top: 45px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.especialidades .especialidades-box:hover,
+.sobre .especialidades-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #000000;
+}
+
+.especialidades .especialidades-box i,
+.sobre .especialidades-box i {
+  font-size: 70px;
+  color: #3eb4f8ff;
+}
+
+.especialidades .especialidades-box h3,
+.sobre .especialidades-box h3 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+/* ESTILO SOBRE */
+section.sobre {
+  padding: 40px 4%;
+}
+
+section.sobre .flex {
+  text-align: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre .txt-sobre {
+  color: #000;
+}
+
+.sobre .img-sobre img {
+  width: 260px;
+  height: auto;
+}
+
+.sobre .txt-sobre h2 {
+  margin-bottom: 30px;
+  line-height: 55px;
+  font-size: 50px;
+}
+
+.sobre .txt-sobre h2 span {
+  color: #3eb4f8ff;
+  display: block;
+}
+
+.sobre .txt-sobre p {
+  color: #000;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.btn-social button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #3eb4f8ff;
+  font-size: 23px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.2s;
+}
+
+/* PORTIFOLIO */
+section.portifolio {
+  padding: 40px 4%;
+  box-shadow: 0 0 40px 10px #ffffff17;
+}
+
+.img-port {
+  width: 360px;
+  height: 460px;
+  background-color: #3eb4f8ff;
+  background-size: cover;
+  background-position: 100% 0%;
+  transition: 8s;
+  cursor: pointer;
+  border-radius: 40px;
+  position: relative;
+}
+.img-port3 {
+  width: 360px;
+  height: 460px;
+  background-color: #3eb4f8ff;
+  background-size: auto;
+  background-position: center;
+  transition: 8s;
+  cursor: pointer;
+  border-radius: 40px;
+  position: relative;
+}
+
+section.portifolio .flex {
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.img-port:hover {
+  background-position: 100% 100%;
+}
+.img-port3:hover {
+  background-position: -100% 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b8;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+/* SESSÃO FORMULARIO */
+section.formulario {
+  padding: 80px 4%;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+form input::placeholder,
+textarea::placeholder {
+  color: #fff;
+}
+form input,
+form textarea {
+  width: 100%;
+  background-color: #3eb4f8ff;
+  border: 0;
+  outline: 0;
+  padding: 20px 15px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 18px;
+}
+form input:focus,
+textarea:focus {
+  background-color: rgb(3, 117, 184);
+}
+
+form textarea {
+  color: #fff;
+  resize: none;
+  max-height: 300px;
+}
+
+form .btn-enviar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form .btn-enviar input {
+  width: 120px;
+  background-color: #3eb4f8ff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 1.3s;
+}
+form .btn-enviar input:hover {
+  background-color: #f6a400ff;
+}
+form .btn-enviar input:focus {
+  background-color: #3faf00ff;
+}
+
+/* ESTILO DO RODAPÉ */
+
+footer {
+  padding: 40px 4%;
+  box-shadow: 0 0 40px 10px #ffffff17;
+}
+
+footer .logo-footer img {
+  width: 150px;
+}
+
+footer .flex {
+  justify-content: space-between;
+}
+
+footer .line-footer {
+  padding: 20px 0;
+}
+
+footer .line-footer p i {
+  color: #3eb4f8ff;
+  font-size: 22px;
+}
+
+footer .line-footer p a {
+  color: #000;
+  margin-left: 5px;
+}
+
+.border {
+  border-top: 2px solid #3eb4f8ff;
+}
+
+@media screen and (max-width: 1020px) {
+  /* CLASSES GERAIS */
+  .flex {
+    flex-direction: column;
+  }
+
+  h2.titulo {
+    font-size: 34px;
+    line-height: 30px;
+  }
+
+  /* CABEÇALHO */
+  .menu-desktop,
+  .btn-contato {
+    display: none;
+  }
+
+  /* ESTILO DO MENU MOBILE */
+  .btn-abrir-menu i {
+    color: #fff;
+    font-size: 40px;
+  }
+  .menu-mobile {
+    background-color: #222020c7;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999999;
+    width: 70%;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+  }
+
+  .menu-mobile.abrir-menu {
+    width: 70%;
+    display: inline;
+  }
+  .menu-mobile .btn-fechar {
+    padding: 20px 8%;
+  }
+  .menu-mobile .btn-fechar i {
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .menu-mobile nav ul {
+    text-align: right;
+  }
+
+  .menu-mobile nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 4%;
+    display: block;
+  }
+
+  .menu-mobile nav ul li a:hover {
+    background-color: #000;
+  }
+  .btn-abrir-menu {
+    display: block;
+  }
+  /* TOPO DO SITE */
+  section.topo-do-site .flex {
+    gap: 40px;
+  }
+
+  section.topo-do-site {
+    padding: 20px 8%;
+  }
+
+  .topo-do-site h1 {
+    color: #000;
+    font-size: 30px;
+  }
+
+  .topo-do-site .img-topo-site img {
+    width: 100%;
+  }
+
+  /* ESPECIALIDADES */
+  section.especialidades {
+    padding: 40px 4%;
+  }
+
+  /* SOBRE */
+  section.sobre {
+    padding: 20px 8%;
+  }
+
+  .sobre .txt-sobre h2 {
+    line-height: 35px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .btn-social {
+    text-align: center;
+  }
+
+  footer .logo-footer img {
+    width: 100%;
+  }
+
+  /* PORTIFOLIO */
+  section.portifolio {
+    padding: 80px 8%;
+  }
+
+  .img-port {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .img-port3 {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  section.portifolio .flex {
+    gap: 60px;
+  }
+
+  /* RODAPÉ */
+  footer .flex {
+    flex-direction: column;
+  }
+
+  footer .line-footer {
+    text-align: center;
+  }
+  .sobre .img-sobre img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+/* SOBRE */
+
+/* FOOTER */
+/* Estilizando o botão */
+#myBtn {
+  display: none; /* Esconde o botão por padrão */
+  position: fixed; /* Fixa o botão na tela */
+  bottom: 20px; /* Distância do botão em relação ao bottom da tela */
+  right: 30px; /* Distância do botão em relação ao right da tela */
+  z-index: 99; /* Z-index para garantir que o botão esteja acima de outros elementos */
+  font-size: 18px; /* Tamanho da fonte do botão */
+  border: none; /* Remove a borda do botão */
+  outline: none; /* Remove o outline do botão */
+  background-color: #555; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  cursor: pointer; /* Cursor ao passar por cima do botão */
+  padding: 15px; /* Espaçamento interno do botão */
+  border-radius: 4px; /* Borda arredondada */
+}
+
+/* Estilizando o botão ao passar o mouse */
+#myBtn:hover {
+  background-color: #777; /* Altera a cor de fundo ao passar o mouse */
+}
