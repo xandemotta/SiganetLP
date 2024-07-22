@@ -23,19 +23,15 @@ body {
   padding: 10px 40px;
   font-size: 18px;
   font-weight: 600;
-  background-color: #3eb4f8ff;
+  background-color: #fff;
   border: 0;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.2s;
 }
-.btn-contato button:hover {
-  box-shadow: 0px 0px 8px #fff;
-  transform: scale(1.3);
-}
 
 h2.titulo {
-  color: #000;
+  color: #fff;
   font-size: 38px;
   text-align: center;
 }
@@ -44,15 +40,25 @@ h2.titulo span {
   color: #3eb4f8ff;
 }
 
+button:hover,
+form .btn-enviar input:hover {
+  box-shadow: 0px 0px 8px #3eb4f8ff;
+  transform: scale(1.05);
+}
+button:focus,
+form .btn-enviar input:focus {
+  box-shadow: 0px 0px 8px #3eb4f8ff;
+  transform: scale(1.05);
+}
 /* Estilo do cabeçalho */
 .interface .logo img {
-  width: 260px;
-  height: 120px;
-  transition: 2s;
+  width: 150px;
+  height: 150px;
+  transition: transform 2s;
 }
 .interface .logo img:hover {
   transition: 5s;
-  transform: scale(1.4);
+  transform: scale(1.5);
 }
 
 header {
@@ -66,15 +72,15 @@ header > .interface {
 }
 
 header a {
-  color: #000000;
+  color: #7d7d7d;
   text-decoration: none;
   display: inline-block;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 header nav.menu-desktop a:hover {
-  color: #3eb4f8ff;
-  transform: scale(1.2);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 header nav ul {
@@ -110,11 +116,24 @@ section.topo-do-site .flex {
   display: none;
 }
 .topo-do-site h1 {
-  color: #000;
-  font-size: 85px;
+  color: #fff;
+  font-size: 34px;
   line-height: 40px;
 }
 
+.topo-do-site .txt-topo-site h1 span {
+  color: #3eb4f8ff;
+}
+
+.topo-do-site .txt-topo-site p {
+  color: #645c5c;
+  margin: 40px 0px;
+}
+
+.topo-do-site .img-topo-site img {
+  position: relative;
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
 .topo-do-site .txt-topo-site h1 span {
   color: #3eb4f8ff;
 }
@@ -123,22 +142,6 @@ section.topo-do-site .flex {
 }
 .topo-do-site .txt-topo-site h1 span.orange {
   color: #f6a400ff;
-}
-.topo-do-site .txt-topo-site p {
-  font-size: 20px;
-  color: #000000;
-  margin: 20px 0px;
-}
-.topo-do-site .txt-topo-site p span {
-  font-size: 38px;
-  color: #3eb4f8ff;
-  margin: 40px 20px;
-}
-.topo-do-site .img-topo-site img,
-.sobre .img-sobre img {
-  width: 400px;
-  position: relative;
-  animation: flutuar 2s ease-in-out infinite alternate;
 }
 @keyframes flutuar {
   0% {
@@ -188,10 +191,6 @@ section.especialidades .flex {
   gap: 60px;
 }
 @media screen and (min-width: 1020px) {
-  .btn-abrir-menu {
-    display: none;
-  }
-
   .especialidades-box {
     width: 30%; /* Defina o tamanho desejado */
     padding: 20px; /* Adicione um espaçamento interno */
@@ -201,32 +200,26 @@ section.especialidades .flex {
   }
 }
 
-.especialidades .especialidades-box,
-.sobre .especialidades-box {
-  flex: 1 1 calc(50%-20px);
-  color: #000;
+.especialidades .especialidades-box {
+  color: #fff;
   padding: 40px;
   border: 2px solid #ffffff3b;
   margin-top: 45px;
   border-radius: 20px;
-  box-sizing: border-box;
   transition: 0.2s;
 }
 
-.especialidades .especialidades-box:hover,
-.sobre .especialidades-box:hover {
+.especialidades .especialidades-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #3eb4f8ff;
+  box-shadow: 0 0 20px #ffffff78;
 }
 
-.especialidades .especialidades-box i,
-.sobre .especialidades-box i {
+.especialidades .especialidades-box i {
   font-size: 70px;
   color: #3eb4f8ff;
 }
 
-.especialidades .especialidades-box h3,
-.sobre .especialidades-box h3 {
+.especialidades .especialidades-box h3 {
   font-size: 28px;
   margin: 15px 0;
 }
@@ -237,17 +230,16 @@ section.sobre {
 }
 
 section.sobre .flex {
-  text-align: center;
   align-items: center;
   gap: 60px;
 }
 
 .sobre .txt-sobre {
-  color: #000;
+  color: #fff;
 }
 
 .sobre .img-sobre img {
-  width: 260px;
+  width: 500px;
   height: auto;
 }
 
@@ -263,7 +255,6 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre p {
-  color: #000;
   margin: 20px 0;
   text-align: justify;
 }
@@ -282,7 +273,7 @@ section.sobre .flex {
 
 /* PORTIFOLIO */
 section.portifolio {
-  padding: 40px 4%;
+  padding: 80px 4%;
   box-shadow: 0 0 40px 10px #ffffff17;
 }
 
@@ -357,14 +348,11 @@ form {
   gap: 10px;
   margin-top: 40px;
 }
-form input::placeholder,
-textarea::placeholder {
-  color: #fff;
-}
+
 form input,
 form textarea {
   width: 100%;
-  background-color: #3eb4f8ff;
+  background-color: #35343498;
   border: 0;
   outline: 0;
   padding: 20px 15px;
@@ -372,13 +360,8 @@ form textarea {
   color: #fff;
   font-size: 18px;
 }
-form input:focus,
-textarea:focus {
-  background-color: rgb(3, 117, 184);
-}
 
 form textarea {
-  color: #fff;
   resize: none;
   max-height: 300px;
 }
@@ -394,13 +377,7 @@ form .btn-enviar input {
   color: #000;
   font-weight: 700;
   cursor: pointer;
-  transition: 1.3s;
-}
-form .btn-enviar input:hover {
-  background-color: #f6a400ff;
-}
-form .btn-enviar input:focus {
-  background-color: #3faf00ff;
+  transition: 0.2s;
 }
 
 /* ESTILO DO RODAPÉ */
@@ -428,8 +405,7 @@ footer .line-footer p i {
 }
 
 footer .line-footer p a {
-  color: #000;
-  margin-left: 5px;
+  color: #fff;
 }
 
 .border {
@@ -513,7 +489,7 @@ footer .line-footer p a {
   }
 
   .topo-do-site h1 {
-    color: #000;
+    color: #fff;
     font-size: 30px;
   }
 
@@ -528,7 +504,7 @@ footer .line-footer p a {
 
   /* SOBRE */
   section.sobre {
-    padding: 20px 8%;
+    padding: 40px 8%;
   }
 
   .sobre .txt-sobre h2 {
@@ -589,166 +565,17 @@ footer .line-footer p a {
   bottom: 20px; /* Distância do botão em relação ao bottom da tela */
   right: 30px; /* Distância do botão em relação ao right da tela */
   z-index: 99; /* Z-index para garantir que o botão esteja acima de outros elementos */
-  font-size: 23px; /* Tamanho da fonte do botão */
+  font-size: 18px; /* Tamanho da fonte do botão */
   border: none; /* Remove a borda do botão */
   outline: none; /* Remove o outline do botão */
-  background-color: white; /* Cor de fundo do botão */
-  color: #000; /* Cor do texto do botão */
+  background-color: #555; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
   cursor: pointer; /* Cursor ao passar por cima do botão */
   padding: 15px; /* Espaçamento interno do botão */
   border-radius: 4px; /* Borda arredondada */
 }
 
 /* Estilizando o botão ao passar o mouse */
-
-/* Add this to your existing CSS file */
-
-.dark-theme {
-  /* Global styles */
-  background-color: #333;
-  color: #fff;
-}
-
-.dark-theme * {
-  box-shadow: none;
-}
-
-.dark-theme a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.dark-theme a:hover {
-  color: #ccc;
-}
-
-.dark-theme button,
-.dark-theme input[type="button"],
-.dark-theme input[type="submit"] {
-  background-color: #444;
-
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-
-  padding: 10px 40px;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: #3eb4f8ff;
-  border: 0;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.dark-theme button:hover,
-.dark-theme input[type="button"]:hover,
-.dark-theme input[type="submit"]:hover {
-  background-color: #555;
-}
-
-.dark-theme .interface {
-  background-color: #333;
-}
-.dark-theme .interface .line-footer a {
-  color: #fff;
-}
-.dark-theme .interface .txt-sobre p {
-  color: #fff;
-}
-
-.dark-theme .logo img {
-  filter: invert(1);
-}
-
-.dark-theme .titulo {
-  color: #fff;
-}
-
-.dark-theme .txt-topo-site h1 {
-  color: #fff;
-}
-
-.dark-theme .txt-topo-site p {
-  color: #ccc;
-}
-
-.dark-theme .especialidades-box {
-  background-color: #444;
-  border: px solid #555;
-}
-.dark-theme .especialidades-box h3 {
-  color: #201f1f;
-}
-.dark-theme .especialidades-box h3:hover {
-  color: #3eb4f8ff;
-  cursor: pointer;
-}
-.dark-theme .especialidades-box p {
-  color: #fff;
-
-  text-decoration: none;
-}
-
-.dark-theme .especialidades-box:hover {
-  background-color: #555;
-}
-
-.dark-theme .portifolio {
-  background-color: #333;
-}
-
-.dark-theme .img-port {
-  background-color: #444;
-}
-
-.dark-theme .overlay {
-  background-color: #333;
-  color: #fff;
-}
-
-.dark-theme footer {
-  background-color: #333;
-  color: #fff;
-}
-
-.dark-theme footer a {
-  color: #fff;
-}
-
-.dark-theme footer a:hover {
-  color: #ccc;
-}
-
-.theme-switcher button {
-  padding: 10px 40px;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: #3eb4f8ff;
-  border: 0;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.2s;
-  /* estilo padrão do botão */
-}
-
-.theme-switcher button.dark-theme {
-  /* estilo quando o tema é dark */
-}
-
-.theme-switcher button.dark-theme #sun-icon {
-  display: inline-block;
-}
-
-.theme-switcher button.light-theme {
-  /* estilo quando o tema é light */
-}
-
-.theme-switcher button.light-theme #moon-icon {
-  display: inline-block;
-}
-
-.theme-switcher button.light-theme #sun-icon {
-  display: none;
+#myBtn:hover {
+  background-color: #777; /* Altera a cor de fundo ao passar o mouse */
 }

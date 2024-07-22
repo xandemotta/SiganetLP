@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontes utilizadas (google fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="server/menu.js" defer></script>
+    <title>Nuvem Siganet</title>
+  </head>
+  <body>
+    <!-- ... -->
+    <main>
+      <section class="topo-do-site">
+        <div class="interface">
+          <div class="flex">
+            <div class="txt-topo-site">
+              <h1>
+                SIGA<span>N</span><span class="green">E</span
+                ><span class="orange">T</span>
+              </h1>
+              <p>
+                Deseja aumentar suas vendas e controlar seu negócio de forma
+                mais eficiente?
+                <span><br />Descubra como a Nuvem Siganet pode ajudá-lo!</span>
+              </p>
+              <div class="btn-contato">
+                <a><button>Fale conosco agora!</button></a>
+              </div>
+            </div>
+            <div class="img-topo-site">
+              <img src="img/logo.png" alt="Imagem principal siganet" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="especialidades">
+        <div class="interface">
+          <h2 class="titulo">
+            DESCUBRA OS <span>PRINCIPAIS RECURSOS</span> DO SISTEMA
+          </h2>
+          <div class="flex">
+            <div class="especialidades-box">
+              <i class="bi bi-cloud"></i>
+              <h3>Acessibilidade total</h3>
+              <p>
+                Acesse seu negócio de qualquer lugar, a qualquer hora, com a
+                Nuvem Siganet.
+              </p>
+            </div>
+            <div class="especialidades-box">
+              <i class="bi bi-calculator"></i>
+              <h3>Controle financeiro</h3>
+              <p>
+                Faça projeções de receitas e despesas com precisão e controle
+                seu planejamento financeiro.
+              </p>
+            </div>
+            <div class="especialidades-box">
+              <i class="bi bi-file-earmark-text"></i>
+              <h3>Emissão de Nota Fiscal</h3>
+              <p>
+                Emissão rápida e segura de notas fiscais eletrônicas (NFS-e,
+                NF-e e NFC-e) para uma gestão mais eficiente.
+              </p>
+            </div>
+            <div class="especialidades-box">
+              <i class="bi bi-globe"></i>
+              <h3>Site integrado</h3>
+              <p>
+                Gerencie seu site de forma personalizada e aumente suas
+                conversões.
+              </p>
+            </div>
+            <div class="especialidades-box">
+              <i class="bi bi-headset"></i>
+              <h3>Suporte especializado</h3>
+              <p>
+                Nossa equipe de Customer Success está aqui para ajudá-lo a
+                alcançar seus objetivos.
+              </p>
+            </div>
+            <div class="especialidades-box">
+              <i class="bi bi-graph-up"></i>
+              <h3>Simplifique a gestão</h3>
+              <p>
+                Monitore suas vendas, analise seu estoque e gerencie suas contas
+                a pagar e receber com facilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sobre">
+        <div class="interface">
+          <div class="flex">
+            <div class="img-sobre">
+              <img src="img/foguete.svg" alt="Imagem sobre" />
+            </div>
+            <div class="txt-sobre">
+              <h2>TRANSFORME SEU NEGÓCIO COM <span>A NUvem SIGANET</span></h2>
+              <p>
+                Aumente suas vendas, reduza custos e melhore a eficiência do seu
+                negócio com a Nuvem Siganet.
+              </p>
+              <p>
+                Nossa equipe de especialistas está aqui para ajudá-lo a alcançar
+                seus objetivos e superar seus desafios.
+              </p>
+              <div class="btn-social">
+                <a href="#" target="_blank"
+                  ><button><i class="bi bi-instagram"></i></button
+                ></a>
+                <a href="#" target="_blank"
+                  ><button><i class="bi bi-youtube"></i></button
+                ></a>
+                <a href="#" target="_blank"
+                  ><button><i class="bi bi-linkedin"></i></button
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="portifolio" id="portifolio">
+        <div class="interface">
+          <h2 class="titulo">NOSSOS <span>CASES DE SUCESSO</span></h2>
+          <div class="flex">
+            <div
+              class="img-port"
+              style="background-image: url(img/projeto1.png)"
+            >
+              <div class="overlay">SC Weld</div>
+            </div>
+            <div
+              class="img-port"
+              style="background-image: url(img/projeto2.png)"
+            >
+              <div class="overlay">Casa da Solda</div>
+            </div>
+            <div
+              class="img-port"
+              style="background-image: url(img/projeto3.png)"
+            >
+              <div class="overlay">AC CONSTRUTORA</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="formulario" id="formulario">
+        <div class="interface">
+          <h2 class="titulo">Fale <span>conosco</span></h2>
+          <form action="server/enviar_email.php" method="post" id="emailForm">
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Seu nome"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Seu email"
+              required
+            />
+            <textarea
+              name="mensagem"
+              id="mensagem"
+              placeholder="Sua mensagem"
+              required
+            ></textarea>
+            <div class="btn-enviar">
+              <input type="submit" value="Enviar" />
+            </div>
+          </form>
+          <div id="resultado"></div>
+        </div>
+      </section>
+    </main>
+    <!--... -->
+  </body>
+</html>
