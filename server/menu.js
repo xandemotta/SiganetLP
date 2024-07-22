@@ -1,107 +1,119 @@
-let btnMenu = document.getElementById("btn-menu");
-let menu = document.getElementById("menu-mobile");
-let overlay = document.getElementById("overlay-menu");
-
-btnMenu.addEventListener("click", () => {
-  menu.classList.add("abrir-menu");
-});
-
-menu.addEventListener("click", () => {
-  menu.classList.remove("abrir-menu");
-});
-overlay.addEventListener("click", () => {
-  menu.classList.remove("abrir-menu");
-});
-
-document
-  .getElementById("emailForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita que o formulário seja enviado normalmente
-
-    // Obtém os dados do formulário
-    const formData = new FormData(this);
-
-    // Envia os dados para o arquivo PHP usando AJAX
-    fetch("enviar_email.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.text(); // Retorna o texto da resposta
-        }
-        throw new Error("Erro ao enviar o email.");
-      })
-      .then((data) => {
-        alert(data); // Exibe a mensagem de sucesso ou erro
-      })
-      .catch((error) => {
-        console.error("Erro:", error);
-        alert("Fale comigo agora mesmo pelo botão contato no inicio da página");
-      });
-  });
-
-// botao pra voltar pro topo
-// Mostra o botão quando o usuário rolar 20px da parte superior do documento
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("myBtn").style.display = "block";
-  } else {
-    document.getElementById("myBtn").style.display = "none";
-  }
-}
-
-// Ao clicar no botão, a página é movida para o topo
+// Função para rolar suavemente até o topo
 function topFunction() {
-  // Retorna suavemente ao topo da página
-  // O intervalo de tempo define a suavidade do retorno (quanto menor, mais suave)
   const scrollToTop = () => {
     const c = document.documentElement.scrollTop || document.body.scrollTop;
     if (c > 0) {
       window.requestAnimationFrame(scrollToTop);
-      window.scrollTo(0, c - c / 5); // Altere o valor 8 para ajustar a velocidade do retorno
+      window.scrollTo(0, c - c / 5); // Ajuste a suavidade do retorno
     }
   };
   scrollToTop();
 }
 
-document
-  .getElementById("emailForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+// Função para inicializar todos os event listeners após o carregamento do DOM
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleção dos elementos
+  let btnMenu = document.getElementById("btn-menu");
+  let menu = document.getElementById("menu-mobile");
+  let overlay = document.getElementById("overlay-menu");
+  let emailForm = document.getElementById("emailForm");
+  let myBtn = document.getElementById("myBtn");
+  const switchButton = document.getElementById("theme-switcher");
+  const body = document.body;
+  const moonIcon = document.getElementById("moon-icon");
+  const sunIcon = document.getElementById("sun-icon");
 
-    var formData = new FormData(this);
+  // Abre o menu ao clicar no botão de menu
+  if (btnMenu) {
+    btnMenu.addEventListener("click", () => {
+      if (menu) {
+        menu.classList.add("abrir-menu");
+      }
+      if (overlay) {
+        overlay.style.display = "block"; // Exibir o overlay
+      }
+    });
+  }
 
-    fetch("server/enviar_email.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("resultado").innerText = data;
+  // Fecha o menu ao clicar no menu ou no overlay
+  if (menu) {
+    menu.addEventListener("click", () => {
+      menu.classList.remove("abrir-menu");
+      if (overlay) {
+        overlay.style.display = "none"; // Ocultar o overlay
+      }
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      menu.classList.remove("abrir-menu");
+      overlay.style.display = "none"; // Ocultar o overlay
+    });
+  }
+
+  // Envia o formulário via AJAX
+  if (emailForm) {
+    emailForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita que o formulário seja enviado normalmente
+
+      // Obtém os dados do formulário
+      const formData = new FormData(this);
+
+      // Envia os dados para o arquivo PHP usando AJAX
+      fetch("server/enviar_email.php", {
+        method: "POST",
+        body: formData,
       })
-      .catch((error) => {
-        document.getElementById("resultado").innerText = "Erro ao enviar email";
-      });
-  });
+        .then((response) => {
+          if (response.ok) {
+            return response.text(); // Retorna o texto da resposta
+          }
+          throw new Error("Erro ao enviar o email.");
+        })
+        .then((data) => {
+          alert(data); // Exibe a mensagem de sucesso ou erro
+        })
+        .catch((error) => {
+          console.error("Erro:", error);
+          alert(
+            "Fale comigo agora mesmo pelo botão contato no início da página"
+          );
+        });
+    });
+  }
 
-const switchButton = document.getElementById("theme-switcher");
-const body = document.body;
-const moonIcon = document.getElementById("moon-icon");
-const sunIcon = document.getElementById("sun-icon");
+  // Função para mostrar/ocultar o botão de voltar ao topo
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      if (myBtn) {
+        myBtn.style.display = "block";
+      }
+    } else {
+      if (myBtn) {
+        myBtn.style.display = "none";
+      }
+    }
+  }
 
-switchButton.addEventListener("click", () => {
-  body.classList.toggle("dark-theme");
+  // Adiciona o listener de scroll para mostrar/ocultar o botão de voltar ao topo
+  window.onscroll = scrollFunction;
 
-  if (body.classList.contains("dark-theme")) {
-    moonIcon.style.visibility = "hidden";
-    sunIcon.style.visibility = "visible";
-  } else {
-    moonIcon.style.visibility = "visible";
-    sunIcon.style.visibility = "hidden";
+  // Alterna entre o tema escuro e o tema claro
+  if (switchButton) {
+    switchButton.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+
+      if (body.classList.contains("dark-theme")) {
+        moonIcon.style.visibility = "hidden";
+        sunIcon.style.visibility = "visible";
+      } else {
+        moonIcon.style.visibility = "visible";
+        sunIcon.style.visibility = "hidden";
+      }
+    });
   }
 });
